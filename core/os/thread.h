@@ -94,7 +94,7 @@ public:
 #if !defined(NO_THREADS)
 	_FORCE_INLINE_ ID get_id() const { return id; }
 	// get the ID of the caller thread
-	_FORCE_INLINE_ static ID get_caller_id() { return caller_id; }
+	static ID get_caller_id();
 	// get the ID of the main thread
 	_FORCE_INLINE_ static ID get_main_id() { return main_thread_id; }
 

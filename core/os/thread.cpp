@@ -52,6 +52,8 @@ uint64_t Thread::_thread_id_hash(const std::thread::id &p_t) {
 Thread::ID Thread::main_thread_id = _thread_id_hash(std::this_thread::get_id());
 thread_local Thread::ID Thread::caller_id = 0;
 
+Thread::ID Thread::get_caller_id() { return caller_id; }
+
 void Thread::_set_platform_funcs(
 		Error (*p_set_name_func)(const String &),
 		void (*p_set_priority_func)(Thread::Priority),
