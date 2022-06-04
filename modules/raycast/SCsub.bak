@@ -249,25 +249,25 @@ if env["builtin_embree"]:
     env_thirdparty_sse42 = env_raycast_sse42.Clone()
     env_thirdparty_sse42.force_optimization_on_debug()
     env_thirdparty_sse42.disable_warnings()
-    if env["bits"] == "64" and env["use_llvm"]:
+    if env["bits"] == "64":
         env_thirdparty_sse42.add_source_files(thirdparty_obj, thirdparty_sources_sse42)
     
     env_thirdparty_avx = env_raycast_avx.Clone()
     env_thirdparty_avx.force_optimization_on_debug()
     env_thirdparty_avx.disable_warnings()
-    if env["bits"] == "64" and env["use_llvm"]:
+    if env["bits"] == "64":
         env_thirdparty_avx.add_source_files(thirdparty_obj, thirdparty_sources_avx)
 
     env_thirdparty_avx2 = env_raycast_avx2.Clone()
     env_thirdparty_avx2.force_optimization_on_debug()
     env_thirdparty_avx2.disable_warnings()
-    if env["bits"] == "64" and env["use_llvm"]:
+    if env["bits"] == "64":
         env_thirdparty_avx2.add_source_files(thirdparty_obj, thirdparty_sources_avx2)
 
     env_thirdparty_avx512f = env_raycast_avx512f.Clone()
     env_thirdparty_avx512f.force_optimization_on_debug()
     env_thirdparty_avx512f.disable_warnings()
-    if env["bits"] == "64" and env["use_llvm"]:
+    if env["bits"] == "64":
         env_thirdparty_avx512f.add_source_files(thirdparty_obj, thirdparty_sources_avx512f)
 
     if not env["arch"] in ["x86", "x86_64"] or env.msvc:

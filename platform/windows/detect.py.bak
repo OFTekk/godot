@@ -381,7 +381,7 @@ def configure_mingw(env):
         mingw_prefix = env["mingw_prefix_64"]
 
     if env["use_llvm"]:
-        if env["platform"] == "windows" and env["use_lto"] and env["use_llvm"]:
+        if env["platform"] == "windows" and env["use_lto"]:
             env["AR"] = "llvm-ar"
             env["RANLIB"] = "llvm-ranlib"
         else:
