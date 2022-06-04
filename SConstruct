@@ -656,17 +656,17 @@ if selected_platform in platform_list:
             env.Prepend(CFLAGS=["-msse2", "-mxsave", "-msse3", "-mssse3", "-msse4.1", "-msse4.2", "-mpopcnt"])
             env.Prepend(CXXFLAGS=["-msse2", "-mxsave", "-msse3", "-mssse3", "-msse4.1", "-msse4.2", "-mpopcnt"])
         if env["use_compiler_rt"] and env["use_llvm"]:
-            env.Prepend(CFLAGS=["-rtlib=compiler-rt"]
-            env.Prepend(CXXFLAGS=["-rtlib=compiler-rt"]
-            env.Prepend(LINKFLAGS=["-rtlib=compiler-rt"]
+            env.Prepend(CFLAGS=["-rtlib=compiler-rt"])
+            env.Prepend(CXXFLAGS=["-rtlib=compiler-rt"])
+            env.Prepend(LINKFLAGS=["-rtlib=compiler-rt"])
         if env["use_libcpp"] and env["use_llvm"]:
-            env.Prepend(CFLAGS=["-stdlib=libc++"]
-            env.Prepend(CXXFLAGS=["-stdlib=libc++"]
-            env.Prepend(LINKFLAGS=["-stdlib=libc++"]
+            env.Prepend(CFLAGS=["-stdlib=libc++"])
+            env.Prepend(CXXFLAGS=["-stdlib=libc++"])
+            env.Prepend(LINKFLAGS=["-stdlib=libc++"])
         if env["use_lld"] and env["use_llvm"]:
-            env.Prepend(CFLAGS=["-fuse-ld=lld"]
-            env.Prepend(CXXFLAGS=["-fuse-ld=lld"]
-            env.Prepend(LINKFLAGS=["-fuse-ld=lld"]
+            env.Prepend(CFLAGS=["-fuse-ld=lld"])
+            env.Prepend(CXXFLAGS=["-fuse-ld=lld"])
+            env.Prepend(LINKFLAGS=["-fuse-ld=lld"])
 
     if hasattr(detect, "get_program_suffix"):
         suffix = "." + detect.get_program_suffix()

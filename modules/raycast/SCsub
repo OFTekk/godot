@@ -143,7 +143,7 @@ if env["builtin_embree"]:
     thirdparty_sources_avx2 = [thirdparty_dir + file for file in embree_avx2_src]
     thirdparty_sources_avx512f = [thirdparty_dir + file for file in embree_avx512f_src]
 
-    if env["use_avx512f"]:
+    if env["use_avx512"]:
         for p in ["-msse2", "-mxsave", "-msse3", "-mssse3", "-msse4.1", "-msse4.2", "-mpopcnt", "-mavx", "-mfma", "-mavx2", "-mlzcnt", "-mbmi2", "-mavx512f", "-mavx512dq"]:
             env_raycast["CFLAGS"].remove(p)
             env_raycast["CXXFLAGS"].remove(p)
